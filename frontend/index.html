@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en-US" ng-app="kofApp">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+<script src="bower_components/angular-spinner/dist/angular-spinner.min.js"></script>
+<script src="src/app.js"></script>
+
+<link rel="stylesheet" type="text/css" href="bower_components/angular-tree-control/css/tree-control.css">
+<link rel="stylesheet" href="src/styles/main.css">
+
+<body>
+    <div ng-controller="main">
+        <div class = "side-bar" ng-init="init()">
+            <div class="tree-container">
+                <treecontrol class="tree-classic"
+                             tree-model="dataForTheTree"
+                             options="treeOptions"
+                             selected-node="node1"
+                             on-node-toggle="get_children(node, expanded)">
+
+                    {{node.name}}
+                    <div class="loader" ng-if="node.loading && node.expanded">
+                        <span  us-spinner="{radius:6}" spinner-on="!node.loaded && node.expanded"></span>
+                    </div>
+                    <span class="failed" ng-show="node.failed && node.expanded" ng-click="get_children(node, true)">
+                        </br>
+                        failed loading children for <span class="black">{{node.name}}</span>, click to try again
+                    </span>
+                </treecontrol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

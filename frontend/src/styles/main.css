@@ -1,0 +1,46 @@
+
+.loader{
+  position: relative; width: 40px;
+  height: 40px
+}
+
+.failed{
+  color: red;
+  cursor: pointer;
+}
+.failed>span{
+  color: blue;
+  font-size: 1.1em;
+}
+
+.tree-container .node .tree-branch-head{
+  background-repeat: no-repeat !important;
+  background-size: 18px !important;
+}
+
+.tree-container .node .collapsed_node.tree-branch-head {
+  background-image: url(./../../src/images/db.png) !important;
+}
+.tree-container .node .expanded_node.tree-branch-head {
+  background-image: url(./../../src/images/db_ex.png) !important;
+}
+
+.tree-container .node .node .collapsed_node.tree-branch-head {
+  background-image: url(./../../src/images/schema.png) !important;
+}
+.tree-container .node .node .expanded_node.tree-branch-head {
+  background-image: url(./../../src/images/schema_ex.png) !important;
+}
+
+.tree-container .node .node .node .collapsed_node.tree-branch-head {
+  background-image: url(./../../src/images/table.png) !important;
+}
+.tree-container .node .node .node .expanded_node.tree-branch-head {
+  background-image: url(./../../src/images/table_ex.png) !important;
+}
+
+.tree-container .column {
+  background-repeat: no-repeat !important;
+  background-size: 18px !important;
+  background-image: url(./../../src/images/column.png) !important;
+}
